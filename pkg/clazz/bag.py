@@ -33,10 +33,11 @@ class Pocket:
 class BackPack(Bag, Pocket) :
     def __init__(self, name):
         self.name = name
+        self.__belt = name
 
 
     def show(self):
-        print("I am BackPack show")
+        print("I am BackPack %s show " % self.__belt)
 
 if __name__ == "__main__" :
     b = BackPack('backpack')
