@@ -15,8 +15,7 @@ python3 -m venv env
 
 ### how to install python library
 ```
-python3 -m pip install fastapi
-pip3 install uvicorn
+python3 -m pip install fastapi uvicorn
 ```
 
 ### how to execute
@@ -31,3 +30,10 @@ http://127.0.0.1:8000/docs
 
 ```
 
+### k8s debugging using telepresence
+```
+kubectl apply -f ./ops
+```
+```
+telepresence --context {YOUR K8S} --namespace {YOUR NAMESPACE} --swap-deployment fastapi-app1 --expose 8000 --run bash
+```

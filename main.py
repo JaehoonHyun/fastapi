@@ -2,6 +2,7 @@ from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
+import uvicorn
 
 app = FastAPI()
 
@@ -41,3 +42,6 @@ async def update_item_sub(item: PatchItem):
     dicted_item['success'] = True
 
     return JSONResponse(dicted_item)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
