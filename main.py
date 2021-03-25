@@ -3,6 +3,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
 import uvicorn
+import keycloak
+
+
 
 app = FastAPI()
 
@@ -44,4 +47,4 @@ async def update_item_sub(item: PatchItem):
     return JSONResponse(dicted_item)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000, loop="asyncio")
