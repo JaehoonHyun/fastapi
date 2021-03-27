@@ -10,12 +10,14 @@ apt-get install python3-pip
 ```
 apt-get install python3-venv
 python3 -m venv env
+source env/bin/activate
 ```
 
 
 ### how to install python library
 ```
 python3 -m pip install fastapi uvicorn
+python3 -m pip install pyjwt==1.7.1
 ```
 
 ### how to execute
